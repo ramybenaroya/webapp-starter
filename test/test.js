@@ -1,2 +1,4 @@
+var requireDir = require('require-dir')
+
 require('babel/register');
-require('./unit/example-module-test');
+requireDir('./unit');
