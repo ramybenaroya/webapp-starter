@@ -1,7 +1,6 @@
 var gulp = require("gulp");
 var eslint = require("gulp-eslint");
 var mocha = require("gulp-mocha");
-var isProduction = require("../tasks-config").isProduction;
 
 gulp.task("lint-test", function(cb) {
 	return gulp.src(["test/unit/**/*.js"])

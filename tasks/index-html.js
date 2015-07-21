@@ -14,7 +14,7 @@ gulp.task("add-livereload-script", ["copy-index-html"], function(cb) {
 		.pipe(gulp.dest("./dist/"));
 });
 
-gulp.task("index-html", ["add-livereload-script"]);
+gulp.task("index-html", isProduction ? ["copy-index-html"] : ["add-livereload-script"]);
 
 gulp.task("watch_index", function(cb) {
 	gulp.watch("./index.html", gulpsync.sync(["index-html", "reload"]));

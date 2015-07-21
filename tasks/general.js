@@ -2,7 +2,8 @@ var gulp = require("gulp");
 var eslint = require("gulp-eslint");
 var del = require("del");
 var gulpsync = require("gulp-sync")(gulp);
-var isProduction = require("../tasks-config").isProduction;
+var ghpages = require("gh-pages");
+var tasksConfig = require("../tasks-config");
 
 gulp.task("watch", ["lint-gulp", "server", "listen", "default", "watch_js", "watch_styles", "watch_index"]);
 
@@ -33,3 +34,7 @@ gulp.task("lint-gulp", function(cb) {
 });
 
 gulp.task("default", gulpsync.sync(["lint-gulp", "clean", "index-html", "js", "styles"]));
+
+gulp.task("gh-pages", function(cb){
+	ghpages.publish(tasksConfig.distAbsolutePath, cb);
+});
