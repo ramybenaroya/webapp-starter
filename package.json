@@ -7,7 +7,7 @@
     "postinstall": "npm i -g babel-eslint",
     "watch": "gulp watch",
     "build": "gulp",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test"
   },
   "author": "",
   "license": "ISC",
